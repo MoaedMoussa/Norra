@@ -8,19 +8,16 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-5 lg:px-8 py-14 grid grid-cols-2 md:grid-cols-4 gap-10">
         <div className="col-span-2">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-full bg-neutral-900 text-white flex items-center justify-center text-sm font-bold">P</div>
-            <span className="font-semibold text-[17px] tracking-tight">PathPages</span>
+            <span className="w-8 h-8 rounded-full bg-[#14110E] text-[#F8F5EE] inline-flex items-center justify-center text-[14px]" style={{ fontFamily: 'Fraunces, serif' }}>N</span>
+            <span className="font-medium text-[20px]" style={{ fontFamily: 'Fraunces, serif', letterSpacing: '-0.02em' }}>Norra</span>
           </div>
-          <p className="mt-4 text-[14px] text-neutral-600 max-w-md leading-relaxed">
-            All-in-one Notion templates to help you organize your life and get things done. Trusted by over 120,000+ customers worldwide.
-          </p>
+          <p className="mt-4 text-[14px] text-neutral-600 max-w-md leading-relaxed">A small studio building calm Notion templates that help you run your work and your life with intention.</p>
           <div className="flex gap-2 mt-5">
             <a href="#" className="w-9 h-9 rounded-full border border-neutral-200 flex items-center justify-center hover:bg-white transition"><Twitter size={16} /></a>
             <a href="#" className="w-9 h-9 rounded-full border border-neutral-200 flex items-center justify-center hover:bg-white transition"><Youtube size={16} /></a>
             <a href="#" className="w-9 h-9 rounded-full border border-neutral-200 flex items-center justify-center hover:bg-white transition"><Instagram size={16} /></a>
           </div>
         </div>
-
         <div>
           <h4 className="text-[13px] font-semibold uppercase tracking-wider text-neutral-500 mb-4">Templates</h4>
           <ul className="space-y-2.5 text-[14px]">
@@ -31,7 +28,6 @@ export default function Footer() {
             <li><Link to="/templates/notion-complete-bundle" className="text-neutral-700 hover:text-black">Complete Bundle</Link></li>
           </ul>
         </div>
-
         <div>
           <h4 className="text-[13px] font-semibold uppercase tracking-wider text-neutral-500 mb-4">Company</h4>
           <ul className="space-y-2.5 text-[14px]">
@@ -45,7 +41,7 @@ export default function Footer() {
       </div>
       <div className="border-t border-neutral-200">
         <div className="max-w-7xl mx-auto px-5 lg:px-8 py-5 flex flex-col md:flex-row items-center justify-between gap-2 text-[13px] text-neutral-500">
-          <div>© 2026 PathPages. All rights reserved.</div>
+          <div>© 2026 Norra Studio. Made with care.</div>
           <div className="flex gap-6"><a href="#" className="hover:text-neutral-800">Terms</a><a href="#" className="hover:text-neutral-800">Privacy</a><a href="#" className="hover:text-neutral-800">Refunds</a></div>
         </div>
       </div>

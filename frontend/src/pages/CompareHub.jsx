@@ -18,10 +18,7 @@ export default function CompareHub() {
     setMeta('PathPages Comparisons: Notion Templates vs Alternatives (2026)', 'Compare PathPages side by side with every major Notion templates provider — features, pricing, quality, and which is best in 2026.');
   }, []);
 
-  const allCompares = [
-    { slug: 'pathpages', name: 'The Original Pathpages', tagline: 'This app vs. the original Pathpages brand.' },
-    ...competitors,
-  ];
+  const allCompares = competitors;
 
   return (
     <div className="min-h-screen bg-white">

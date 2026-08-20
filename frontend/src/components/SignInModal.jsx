@@ -1,64 +1,36 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from './ui/dialog';
-import { Input } from './ui/input';
-import { Label } from './ui/label';
-import { toast } from '../hooks/use-toast';
-import { Mail, Lock } from 'lucide-react';
+import { useAuth } from '../context/AuthContext';
 
 export default function SignInModal({ open, onClose }) {
-  const [mode, setMode] = useState('signin');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-
-  const submit = (e) => {
-    e.preventDefault();
-    if (!email || !password) {
-      toast({ title: 'Please fill both fields' });
-      return;
-    }
-    localStorage.setItem('pp_user', JSON.stringify({ email }));
-    toast({ title: mode === 'signin' ? 'Welcome back!' : 'Account created!', description: email });
-    onClose();
-  };
+  const { login } = useAuth();
 
   return (
     <Dialog open={open} onOpenChange={(o) => !o && onClose()}>
       <DialogContent className="sm:max-w-[420px] rounded-2xl border-neutral-200">
-        <DialogTitle className="display text-[26px]">
-          {mode === 'signin' ? 'Welcome back' : 'Create your account'}
-        </DialogTitle>
+        <DialogTitle className="display text-[28px]">Welcome to PathPages</DialogTitle>
         <DialogDescription className="text-neutral-500 text-[14px]">
-          {mode === 'signin' ? 'Sign in to access your templates and library.' : 'Start organizing your life with Notion templates.'}
+          Sign in to access your templates library, orders, and duplicate templates to your Notion.
         </DialogDescription>
 
-        <form onSubmit={submit} className="mt-2 space-y-4">
-          <div>
-            <Label htmlFor="email" className="text-[13px]">Email</Label>
-            <div className="relative mt-1.5">
-              <Mail size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-neutral-400" />
-              <Input id="email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} className="pl-9 h-11 rounded-lg" placeholder="you@example.com" />
-            </div>
-          </div>
-          <div>
-            <Label htmlFor="password" className="text-[13px]">Password</Label>
-            <div className="relative mt-1.5">
-              <Lock size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-neutral-400" />
-              <Input id="password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} className="pl-9 h-11 rounded-lg" placeholder="••••••••" />
-            </div>
-          </div>
-          <button type="submit" className="pp-btn-dark w-full py-3">
-            {mode === 'signin' ? 'Sign In' : 'Create Account'}
+        <div className="mt-4">
+          <button
+            onClick={login}
+            className="w-full h-12 rounded-lg border border-neutral-300 bg-white hover:bg-neutral-50 transition inline-flex items-center justify-center gap-3 font-semibold text-[14.5px]"
+          >
+            <GoogleLogo /> Continue with Google
           </button>
-        </form>
-
-        <div className="text-center text-[13px] text-neutral-500 mt-2">
-          {mode === 'signin' ? (
-            <>Don't have an account?{' '}<button onClick={() => setMode('signup')} className="underline text-neutral-800">Sign up</button></>
-          ) : (
-            <>Already have an account?{' '}<button onClick={() => setMode('signin')} className="underline text-neutral-800">Sign in</button></>
-          )}
+          <p className="mt-4 text-center text-[12px] text-neutral-500">
+            One click. No password. We only receive your email, name, and profile picture.
+          </p>
         </div>
       </DialogContent>
     </Dialog>
+  );
+}
+
+function GoogleLogo() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84C6.71 7.31 9.14 5.38 12 5.38z"/></svg>
   );
 }
