@@ -1,0 +1,16 @@
+# Norra Scores AI Context
+
+Norra Scores is a modern, progressively enhanced web application providing live sports scores, match details, and standings across various top leagues like the Premier League, LaLiga, and Champions League. 
+
+Features:
+- Real-time match status (LIVE, FT, HT).
+- Deep match stats (shots, possession, cards).
+- Live push notifications (simulated locally).
+- Offline capabilities (PWA).
+- Knowledge Base / Chatbot capabilities.
+
+Tech Stack:
+- React 18, React Router DOM, Vite
+- Tailwind CSS
+- SWR (Stale-While-Revalidate) for data fetching
+- LocalStorage for preferences

@@ -1,6 +1,6 @@
 {
-  "name": "Norra",
-  "description": "Notion templates studio for personal productivity, creator OS, and business systems with instant duplicate and library access.",
+  "name": "Norra Scores",
+  "description": "Live Football Scores, Results & Fixtures. Real-time updates for top leagues.",
   "requestFramePermissions": [],
   "majorCapabilities": [
     "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"

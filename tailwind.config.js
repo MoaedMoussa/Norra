@@ -7,12 +7,20 @@ export default {
   ],
   theme: {
     extend: {
-      borderRadius: {
-        lg: 'var(--radius)',
-        md: 'calc(var(--radius) - 2px)',
-        sm: 'calc(var(--radius) - 4px)'
-      },
       colors: {
+        sports: {
+          bg: 'rgb(var(--sports-bg))',
+          surface: 'rgb(var(--sports-surface))',
+          surfaceHover: 'rgb(var(--sports-surfaceHover))',
+          primary: 'rgb(var(--sports-primary))',
+          primaryHover: 'rgb(var(--sports-primaryHover))',
+          text: 'rgb(var(--sports-text))',
+          textMuted: 'rgb(var(--sports-textMuted))',
+          border: 'rgb(var(--sports-border))',
+          live: '#FF6B00',
+          redCard: '#FF3B30',
+          yellowCard: '#FFCC00',
+        },
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         card: {
@@ -54,6 +62,11 @@ export default {
           '5': 'hsl(var(--chart-5))'
         }
       },
+      borderRadius: {
+        lg: 'var(--radius)',
+        md: 'calc(var(--radius) - 2px)',
+        sm: 'calc(var(--radius) - 4px)'
+      },
       keyframes: {
         'accordion-down': {
           from: { height: '0' },
@@ -62,11 +75,16 @@ export default {
         'accordion-up': {
           from: { height: 'var(--radix-accordion-content-height)' },
           to: { height: '0' }
+        },
+        'pulse-fast': {
+          '0%, 100%': { opacity: 1 },
+          '50%': { opacity: 0.5 }
         }
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
-        'accordion-up': 'accordion-up 0.2s ease-out'
+        'accordion-up': 'accordion-up 0.2s ease-out',
+        'pulse-fast': 'pulse-fast 1s cubic-bezier(0.4, 0, 0.6, 1) infinite'
       }
     }
   },

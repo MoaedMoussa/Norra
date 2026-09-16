@@ -1,0 +1,30 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // User Profile
+    match /users/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+
+    // Chatbots: Publicly readable for chat widgets, modifiable by owner
+    match /chatbots/{chatbotId} {
+      allow read: if true;
+      allow create: if request.auth != null;
+      allow update, delete: if request.auth != null && (resource == null || resource.data.userId == request.auth.uid || resource.data.userId == 'demo-user-1');
+      // Allow analytics increments from public chats
+      allow update: if request.resource.data.diff(resource.data).affectedKeys().hasOnly(['analytics', 'updatedAt']);
+    }
+
+    // Conversations: public session creation and chat history
+    match /conversations/{conversationId} {
+      allow read, write: if true;
+    }
+
+    // Leads: public capture submission, authenticated owner reading
+    match /leads/{leadId} {
+      allow create: if true;
+      allow read, update, delete: if request.auth != null;
+    }
+  }
+}
