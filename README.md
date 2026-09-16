@@ -1,99 +1,126 @@
-# Norra Scores
+<div align="center">
+  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" />
+  <img src="https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E" alt="Vite" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS" />
+  <img src="https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white" alt="Node.js" />
+  <img src="https://img.shields.io/badge/Express.js-404D59?style=for-the-badge&logo=express&logoColor=white" alt="Express.js" />
+  <img src="https://img.shields.io/badge/Socket.io-010101?style=for-the-badge&logo=socket.io&logoColor=white" alt="Socket.io" />
+</div>
 
-> **Norra Scores** is a modern, blazing-fast football (soccer) application providing real-time live scores, comprehensive match details, dynamic standings, and breaking news.
+<br />
 
-Built with performance and user experience in mind, Norra offers a seamless interface across all devices and acts as a fully-featured Progressive Web App (PWA).
+<div align="center">
+  <img src="public/icon-512x512.png" alt="Norra Logo" width="100" height="100" />
+  <h1 align="center">Norra Scores</h1>
+  <p align="center">
+    <strong>A modern, blazing-fast football (soccer) application.</strong>
+    <br />
+    Providing real-time live scores, comprehensive match details, dynamic standings, and breaking news.
+    <br />
+    <br />
+    <a href="https://ais-pre-awoili2behgxputzxtr5bf-310667123643.europe-west2.run.app">View Demo</a>
+    ·
+    <a href="https://github.com/MoaedMoussa/norra-scores/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/MoaedMoussa/norra-scores/issues">Request Feature</a>
+  </p>
+</div>
 
-## 🚀 Features
+<br />
 
-- **Live & Real-Time Updates**: Instant score updates via WebSockets, ensuring you never miss a goal.
-- **Comprehensive Match Coverage**: Detailed statistics, lineups, head-to-head records, and play-by-play timelines.
-- **Personalized Experience**: Save your favorite teams and leagues. Your preferences directly influence your feed.
-- **Smart Push Notifications**: Custom score alerts for your favorite teams and high-stakes matches.
-- **Dynamic Standings & Analytics**: Interactive league tables, form guides, and trend charts.
-- **Offline-Ready (PWA)**: Installable on iOS/Android/Desktop with service worker caching for offline access.
-- **Dark Mode Optimized**: Beautiful, high-contrast UI tailored for both light and dark viewing environments.
+## 📖 About The Project
 
-## 🛠 Tech Stack
+I built **Norra Scores** to provide a seamless, real-time football companion for fans around the world. Recognizing that many sports apps are cluttered with ads and slow to update, I focused on creating a clean, ad-free, and lightning-fast Progressive Web App (PWA) that delivers the data that matters most, the moment it happens.
 
-**Frontend Architecture:**
-- **Framework**: React 18
-- **Build Tool**: Vite
-- **Styling**: Tailwind CSS
-- **Routing**: React Router (v6)
-- **State/Data Fetching**: SWR (Stale-While-Revalidate) & React Context
-- **Animations**: Framer Motion
-- **Icons**: Lucide React
+From live match timelines to dynamic league tables, Norra offers an optimized viewing experience tailored for both desktop and mobile environments.
 
-**Backend & Infrastructure:**
-- **Server**: Node.js + Express
-- **Real-time**: Socket.io
-- **Database/Auth**: Firebase (Firestore) & Firebase Cloud Messaging (FCM)
-- **Deployment**: Google Cloud Run / Docker
+### ✨ Key Features
 
-## 📂 Project Structure
+- ⚡ **Live & Real-Time Updates**: Instant score updates via WebSockets and an internal API proxy, ensuring you never miss a goal.
+- 📊 **Comprehensive Match Coverage**: Detailed statistics, starting lineups, head-to-head records, and play-by-play timelines.
+- 🏆 **Dynamic Standings & Analytics**: Interactive league tables, form guides, and trend analysis for top global leagues.
+- 📰 **Breaking News Feed**: Curated, up-to-date football news tailored to your favorite leagues.
+- 📱 **Offline-Ready (PWA)**: Installable on iOS/Android/Desktop with service worker caching for offline access.
+- 🌓 **Dark Mode Optimized**: Beautiful, high-contrast UI tailored for both light and dark viewing environments.
 
-```text
-├── public/                 # Static assets (icons, manifest, etc.)
-├── scripts/                # Build and deployment scripts (e.g., sitemap generation)
-├── server.ts               # Express backend & WebSocket server entry point
-└── src/
-    ├── api/                # API client and request handlers
-    ├── components/         # Reusable UI components (HeroMatch, StandingsView, etc.)
-    ├── context/            # React Context providers (Auth, Theme)
-    ├── data/               # Static datasets and mocks (Leagues configuration)
-    ├── hooks/              # Custom React hooks (useLiveMatches, useNews, etc.)
-    ├── pages/              # Route level components (Landing, MatchDetail, etc.)
-    └── utils/              # Helper functions and formatters
-```
+---
 
-## 💻 Getting Started
+## 💻 Tech Stack
+
+- **Frontend**: [React 18](https://reactjs.org/)
+- **Build Tool**: [Vite](https://vitejs.dev/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **State/Data Fetching**: [SWR](https://swr.vercel.app/) (Stale-While-Revalidate)
+- **Backend & Proxy**: [Node.js](https://nodejs.org/) & [Express](https://expressjs.com/)
+- **Realtime**: [Socket.io](https://socket.io/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+
+---
+
+## 🚀 Getting Started
+
+To get a local copy up and running, follow these simple steps.
 
 ### Prerequisites
-- [Node.js](https://nodejs.org/) (v18 or higher)
-- npm or yarn
+
+You need Node.js and npm installed on your local machine.
+* npm
+  ```sh
+  npm install npm@latest -g
+  ```
 
 ### Installation
 
 1. **Clone the repository**
-   ```bash
-   git clone https://github.com/yourusername/norra-scores.git
+   ```sh
+   git clone https://github.com/MoaedMoussa/norra-scores.git
+   ```
+
+2. **Navigate to the directory**
+   ```sh
    cd norra-scores
    ```
 
-2. **Install dependencies**
-   ```bash
+3. **Install NPM dependencies**
+   ```sh
    npm install
    ```
 
-3. **Configure Environment Variables**
-   Copy the example environment file and fill in your Firebase / API keys:
-   ```bash
+4. **Environment Variables**
+   Duplicate the `.env.example` file and rename it to `.env`.
+   ```sh
    cp .env.example .env
    ```
 
-4. **Run the Development Server**
-   ```bash
+5. **Start the development server**
+   ```sh
    npm run dev
    ```
-   The application will start concurrently (Vite dev server + Express backend) at `http://localhost:3000`.
+   *Note: The application uses a custom Node.js Express entry point (`server.ts`) that runs alongside the Vite dev server to handle API proxying and WebSockets.*
 
-### Building for Production
+---
 
-To build the application for production deployment:
-```bash
+## ☁️ Deployment
+
+This project is structured for easy deployment on platforms that support full-stack Node.js applications (like Google Cloud Run, Heroku, or Render).
+
+To build the production-ready application (which compiles both the frontend Vite bundle and the backend Express server):
+
+```sh
 npm run build
 ```
-This generates the optimized static files in the `/dist` folder, compiles the server bundle, and automatically generates the `sitemap.xml`.
 
-You can preview the production build using:
-```bash
+You can preview the optimized production build locally with:
+
+```sh
 npm run start
 ```
 
+---
+
 ## 🤝 Contributing
 
-Contributions are always welcome! Whether it's reporting a bug, suggesting a feature, or submitting a pull request, your input helps make Norra better.
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
 1. Fork the Project
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
@@ -101,6 +128,14 @@ Contributions are always welcome! Whether it's reporting a bug, suggesting a fea
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
+---
+
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+Distributed under the MIT License. See `LICENSE` for more information.
+
+---
+
+<div align="center">
+  <p>Built with ❤️ by <a href="https://github.com/MoaedMoussa">Moussa</a></p>
+</div>
